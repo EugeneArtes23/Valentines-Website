@@ -1,0 +1,39 @@
+﻿<div style="margin: 350px"/>
+<div class="text-center" style="margin: 20px">
+	<img src="\Images\shyCat.gif" height="200" width="200" class="align-self-center" id="cato">
+</div >
+<div>
+	<p class="custom-font" id="txt">Will you be my valentines?</p>
+</div>
+<div class="text-center">
+	<div class="align-items-center">
+		<button class="button-38" role="button" id="yaur" onclick="yippie()">Yaur</button>
+		<button class="button-38" role="button" id="naur" onclick="moveButton()">Naur</button>
+	</div>
+</div>
+
+<script>
+    function moveButton() {
+        var button = document.getElementById("naur");
+        var maxX = window.innerWidth - button.offsetWidth;
+        var maxY = window.innerHeight - button.offsetHeight;
+        var newX = Math.floor(Math.random() * maxX);
+        var newY = Math.floor(Math.random() * maxY);
+        button.style.position = "absolute";
+        button.style.left = newX + "px";
+        button.style.top = newY + "px";
+    }
+    function yippie() {
+        var changeYesButton = document.getElementById("yaur");
+        var hideNoButton = document.getElementById("naur");
+        var gifImage = document.getElementById("cato");
+        var textContent = document.getElementById("txt");
+
+        changeYesButton.style.display = "none";
+        hideNoButton.style.display = "none";
+
+        gifImage.src = "\Images\\yippieCat.gif";
+        textContent.innerText = "See you on Valentine's day ;p";
+
+    }
+</script>
